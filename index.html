@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Flipbook</title>
 
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/turn.min.js"></script>
+</head>
+<body>
+
+<div class="book-container">
+    <div id="flipbook">
+
+        <div class="page"><img src="pages/1.jpg"></div>
+        <div class="page"><img src="pages/2.jpg"></div>
+        <div class="page"><img src="pages/3.jpg"></div>
+        <div class="page"><img src="pages/4.jpg"></div>
+        <div class="page"><img src="pages/5.jpg"></div>
+        <div class="page"><img src="pages/6.jpg"></div>
+        <div class="page"><img src="pages/7.jpg"></div>
+        <div class="page"><img src="pages/8.jpg"></div>
+      
+
+    </div>
+</div>
+
+<script>
+    $("#flipbook").turn({
+        width: 900,
+        height: 600,
+        autoCenter: true
+    });
+</script>
+
+</body>
+</html>
