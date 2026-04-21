@@ -14,18 +14,22 @@
 </div>
 
 <script>
-const totalPages = 8;
+$(document).ready(function () {
 
-for (let i = 1; i <= totalPages; i++) {
-    $("#flipbook").append(
-        '<div class="page"><img src="pages/' + i + '.jpg" /></div>'
-    );
-}
+    const totalPages = 8;
 
-$("#flipbook").turn({
-    width: 900,
-    height: 600,
-    autoCenter: true
+    for (let i = 1; i <= totalPages; i++) {
+        $("#flipbook").append(
+            '<div class="page"><img src="pages/' + i + '.jpg" /></div>'
+        );
+    }
+
+    $("#flipbook").turn({
+        width: 900,
+        height: 600,
+        autoCenter: true
+    });
+
 });
 </script>
 
