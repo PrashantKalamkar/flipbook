@@ -14,19 +14,19 @@
 </div>
 
 <script>
-    const totalPages = 8; // 🔴 CHANGE THIS to your total image count
+const totalPages = 8;
 
-    for (let i = 1; i <= totalPages; i++) {
-        $("#flipbook").append(
-            '<div class="page"><img src="pages/' + i + '.jpg"></div>'
-        );
-    }
+for (let i = 1; i <= totalPages; i++) {
+    $("#flipbook").append(
+        '<div class="page"><img src="pages/' + i + '.jpg" /></div>'
+    );
+}
 
-    $("#flipbook").turn({
-        width: 900,
-        height: 600,
-        autoCenter: true
-    });
+$("#flipbook").turn({
+    width: 900,
+    height: 600,
+    autoCenter: true
+});
 </script>
 
 </body>
