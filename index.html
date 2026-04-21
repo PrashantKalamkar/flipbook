@@ -14,21 +14,32 @@
 </div>
 
 <script>
-$(document).ready(function () {
+$(function () {
 
     const totalPages = 8;
+    let loaded = 0;
 
     for (let i = 1; i <= totalPages; i++) {
-        $("#flipbook").append(
-            '<div class="page"><img src="pages/' + i + '.jpg" /></div>'
-        );
-    }
+        const img = new Image();
+        img.src = 'pages/' + i + '.jpg';
 
-    $("#flipbook").turn({
-        width: 900,
-        height: 600,
-        autoCenter: true
-    });
+        img.onload = function () {
+            loaded++;
+
+            $("#flipbook").append(
+                '<div class="page"><img src="pages/' + i + '.jpg" /></div>'
+            );
+
+            // Start turn.js only after all images are loaded
+            if (loaded === totalPages) {
+                $("#flipbook").turn({
+                    width: 900,
+                    height: 600,
+                    autoCenter: true
+                });
+            }
+        };
+    }
 
 });
 </script>
